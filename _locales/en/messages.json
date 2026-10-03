@@ -1,0 +1,4 @@
+{
+  "extensionName": { "message": "Web Renderer" },
+  "extensionDescription": { "message": "Paste HTML, CSS and JavaScript to preview a page. Save projects locally and move them with JSON files." }
+}

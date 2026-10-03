@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Web Renderer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%232d6a50'/%3E%3Ctext x='20' y='27' font-size='24' text-anchor='middle' fill='white'%3Ew%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="index.html" aria-label="Web Renderer"><span class="brand-mark" aria-hidden="true">w<span>°</span></span><span>Web Renderer<small data-i18n="brandSub">你的网页实验室</small></span></a>
+    <div class="sidebar-heading"><span data-i18n="projects">我的项目</span><span id="project-count" class="count">1</span></div>
+    <button id="new-project" class="button new-project"><span aria-hidden="true">＋</span><span data-i18n="newProject">新建项目</span></button>
+    <button id="open-templates" class="button templates-button"><span aria-hidden="true">▦</span><span data-i18n="templates">模板库</span></button>
+    <input id="project-search" class="project-search" type="search" data-i18n-placeholder="searchProjects" placeholder="搜索项目名称或代码" aria-label="搜索项目名称或代码">
+    <p id="project-search-empty" class="empty-state" data-i18n="noProjects" hidden>没有找到匹配的项目</p>
+    <nav id="project-list" aria-label="Projects"></nav>
+    <div class="sidebar-bottom">
+      <div class="local-note"><span class="status-dot"></span><span data-i18n="localOnly">保存在这台浏览器</span></div>
+      <p data-i18n="backupHint">导出一份备份，把灵感带到别处。</p>
+      <div class="file-actions"><button id="import-projects" class="text-button" data-i18n="import">导入 JSON</button><button id="export-projects" class="text-button" data-i18n="export">导出全部</button></div>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
+      <span class="version">LOCAL WORKSPACE / v0.2</span>
+    </div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div class="breadcrumb"><span data-i18n="workspace">工作空间</span><span class="slash">/</span><span id="breadcrumb-name"></span></div>
+      <div class="top-actions"><span id="save-status" role="status" class="save-status"></span><button id="theme-toggle" class="fullscreen-button" aria-pressed="false">夜间模式</button><button id="workspace-fullscreen" class="fullscreen-button" data-fullscreen="workspace" aria-pressed="false">工作台全屏</button><button id="language" class="language-button" aria-label="Switch to English">EN</button></div>
+    </header>
+    <section class="project-header">
+      <div><div class="eyebrow">PASTE. PREVIEW. PLAY.</div><h1 id="project-title"></h1></div>
+      <div class="project-actions"><button id="rename-project" class="button subtle" data-i18n="rename">重命名</button><button id="delete-project" class="button subtle" data-i18n="delete">删除</button><button id="run" class="button primary"><span aria-hidden="true">▷</span><span data-i18n="run">运行预览</span><kbd id="run-shortcut">⌘ ↵</kbd></button></div>
+    </section>
+    <div class="workbench-settings"><span data-i18n="workspaceTools">创作工作台</span><label><span data-i18n="layout">布局</span><select id="layout-mode"><option value="side" data-i18n="sideLayout">左右分栏</option><option value="stacked" data-i18n="stackedLayout">上下分栏</option></select></label></div>
+    <section class="workbench">
+      <section class="editor-panel" aria-label="Code editor">
+        <div class="panel-toolbar"><div class="code-tabs" role="tablist" aria-label="Code language"><button id="tab-html" class="code-tab active" role="tab" aria-selected="true" aria-controls="editor-area" data-tab="html"><span class="file-dot html-dot"></span>HTML</button><button id="tab-css" class="code-tab" role="tab" aria-selected="false" aria-controls="editor-area" tabindex="-1" data-tab="css"><span class="file-dot css-dot"></span>CSS</button><button id="tab-js" class="code-tab" role="tab" aria-selected="false" aria-controls="editor-area" tabindex="-1" data-tab="js"><span class="file-dot js-dot"></span>JS</button></div><span class="code-symbol" aria-hidden="true">&lt;/&gt;</span></div>
+        <div class="editor-tools"><button id="editor-undo" class="text-button" data-i18n="undo">撤销</button><button id="editor-redo" class="text-button" data-i18n="redo">重做</button><span class="tool-spacer"></span><button id="editor-search" class="text-button" data-i18n="findReplace">查找 / 替换</button><button id="editor-format" class="text-button" data-i18n="format">格式化</button></div>
+        <div id="editor-area" class="editor-area" role="tabpanel" aria-labelledby="tab-html"><div id="code-editor"></div></div>
+        <footer class="editor-footer"><span id="editor-meta"></span><span>UTF-8</span></footer>
+      </section>
+      <div id="panel-splitter" class="panel-splitter" role="separator" tabindex="0" aria-label="调整编辑区和预览区大小" aria-orientation="vertical" aria-valuemin="25" aria-valuemax="75" aria-valuenow="48"></div>
+      <section class="preview-panel" aria-label="Preview">
+        <div class="panel-toolbar"><span class="panel-label"><span class="status-dot"></span><span data-i18n="preview">实时预览</span></span><div class="preview-actions"><button id="preview-fullscreen" class="fullscreen-button" data-fullscreen="preview" aria-pressed="false">全屏预览</button><div class="device-buttons" role="group" aria-label="Preview width"><button class="device-button active" data-device="desktop" aria-pressed="true" data-i18n="desktop">桌面</button><button class="device-button" data-device="mobile" aria-pressed="false" data-i18n="mobile">手机</button><button class="device-button" data-device="custom" aria-pressed="false" data-i18n="custom">自定义</button></div></div></div>
+        <div id="viewport-settings" class="viewport-settings" hidden><label><span data-i18n="width">宽</span><input id="viewport-width" type="number" min="240" max="2560" step="1" required value="375"></label><span>×</span><label><span data-i18n="height">高</span><input id="viewport-height" type="number" min="240" max="2560" step="1" required value="667"></label><span>px</span><button id="rotate-viewport" class="text-button" data-i18n="rotate">旋转</button></div>
+        <div id="preview-stage" class="preview-stage"><iframe id="preview" title="网页预览" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe></div>
+        <section id="console-panel" class="console-panel" aria-label="调试控制台" hidden><div id="console-resizer" class="console-resizer" role="separator" tabindex="0" aria-label="调整控制台高度" aria-orientation="horizontal" aria-controls="console-panel" aria-valuemin="80" aria-valuemax="1400" aria-valuenow="190"></div><div class="console-toolbar"><label><span data-i18n="consoleLevel">级别</span><select id="console-level"><option value="all" data-i18n="allLogs">全部</option><option value="log" data-i18n="normalLogs">日志</option><option value="warn" data-i18n="warnings">警告</option><option value="error" data-i18n="errors">错误</option></select></label><label class="preserve-logs"><input id="console-preserve" type="checkbox"><span data-i18n="preserveLogs">保留日志</span></label><button id="console-clear" class="text-button" data-i18n="clear">清空</button><button id="console-close" class="text-button" data-i18n="collapse">收起</button></div><div id="console-output" role="log" aria-live="off"></div><p id="console-empty" class="empty-state" data-i18n="noLogs">暂无日志，试试 console.log('Hello')。</p></section>
+        <footer class="preview-footer"><label class="auto-run"><input id="auto-run" type="checkbox" checked><span data-i18n="autoRun">自动运行</span></label><span id="viewport-size"></span><span id="preview-status" role="status"></span><button id="console-toggle" class="text-button" aria-expanded="false" aria-controls="console-panel"><span data-i18n="console">控制台</span><span id="console-count" class="console-count">0</span></button></footer>
+      </section>
+    </section>
+    <section id="runtime-errors" class="runtime-errors" aria-live="polite" hidden><strong data-i18n="runtimeError">JavaScript 错误</strong><pre id="error-message"></pre></section>
+    <footer class="workspace-footer"><span data-i18n="tip">小提示：完整 HTML 也可以直接粘贴，样式与脚本会一起运行。</span><span data-i18n="footer">一点代码，一点可能。</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="project-dialog"><form id="project-form"><span class="eyebrow">YOUR NEXT IDEA</span><h2 id="dialog-title"></h2><label for="project-name" data-i18n="projectName">项目名称</label><input id="project-name" maxlength="80" required autocomplete="off"><div class="dialog-actions"><button type="button" id="cancel-dialog" class="button subtle" data-i18n="cancel">取消</button><button type="submit" id="confirm-dialog" class="button primary" data-i18n="confirm">确定</button></div></form></dialog>
+  <dialog id="templates-dialog" aria-labelledby="templates-title"><div class="templates-heading"><div><span class="eyebrow">A PLACE TO BEGIN</span><h2 id="templates-title" data-i18n="templates">模板库</h2></div><button id="close-templates" class="button subtle" data-i18n="close">关闭</button></div><p class="templates-intro" data-i18n="templatesHint">选择一个起点，创建属于你的新项目。</p><div id="template-list" class="template-grid"></div></dialog>
+  <dialog id="template-preview-dialog" aria-labelledby="template-preview-title">
+    <header class="template-preview-heading"><h2 id="template-preview-title"></h2><div class="template-preview-actions"><button id="use-template-preview" class="button primary" data-i18n="useTemplate">使用此模板</button><button id="close-template-preview" class="button subtle" data-i18n="backToTemplates" autofocus>返回模板库</button></div></header>
+    <div id="template-preview-stage"></div>
+    <p id="template-preview-error" role="alert" hidden></p>
+    <footer class="template-preview-footer"><span data-i18n="templatePreviewHint">可直接体验交互，使用模板后编辑代码。</span><span id="template-preview-status" role="status"></span></footer>
+  </dialog>
+</body>
+</html>

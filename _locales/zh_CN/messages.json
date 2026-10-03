@@ -1,0 +1,4 @@
+{
+  "extensionName": { "message": "Web Renderer · 网页渲染工具" },
+  "extensionDescription": { "message": "粘贴 HTML、CSS 和 JavaScript，立即预览。支持本地项目保存与导入导出。" }
+}
