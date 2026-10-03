@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "website": "https://github.com/kiritokun07/web-renderer",
+  "supportUrl": "https://github.com/kiritokun07/web-renderer/issues",
+  "privacyPolicyUrl": "https://github.com/kiritokun07/web-renderer/blob/main/PRIVACY.md",
+  "singlePurpose": "Edit, preview and save small HTML, CSS and JavaScript projects locally in an isolated browser workspace.",
+  "permissionJustification": "The extension requests no additional browser permissions and no host permissions. Its toolbar button opens its own workspace with chrome.tabs.create; this operation does not require the tabs permission. It does not read other tabs or browsing history.",
+  "remoteCode": false,
+  "remoteCodeExplanation": "All extension code, CodeMirror, Prettier and built-in templates are packaged locally. User-authored HTML/CSS/JavaScript runs only in a manifest-declared sandbox without extension APIs or workspace storage access. Remote JavaScript loading is restricted by CSP. User code may request external images, styles, fonts or network resources; these requests are not made to maintainer-operated servers.",
+  "dataUsage": "No user data is collected or transmitted to the maintainer by the extension. Projects and preferences remain in browser local storage, and console logs remain in page memory. There are no analytics, ads, telemetry or cloud accounts. User-authored code may contact third parties as explained in the privacy policy.",
+  "certificationNotes": "Click the toolbar icon to open the workspace in a new tab. No account or paid service is needed. Edit HTML/CSS/JS and click Run preview; automatic preview is also available. Open the template library to try all nine templates and their EN/Chinese language buttons. The admin dashboard is an optional local UI demo: username admin and password admin123 are prefilled; click Sign in or press Enter to view overview, users, orders and settings. These are sample credentials for a client-side demonstration, not external authentication. Projects can be exported/imported as JSON. Test formatting, console logs, light/dark theme and fullscreen in the workspace. All libraries are locally bundled. Preview scripts run in an isolated manifest sandbox; extension pages do not enable unsafe-eval or unsafe-inline. Human-readable first-party source and build scripts are available at the website URL; vendor files are minified with esbuild and include third-party license notices.",
+  "locales": {
+    "zh_CN": {
+      "name": "Web Renderer · 网页渲染工具",
+      "shortDescription": "粘贴 HTML、CSS 和 JavaScript，立即预览。支持本地项目保存与导入导出。",
+      "description": "Web Renderer 是一个打开就能使用的网页实验室。点击浏览器工具栏图标，在独立标签页中编辑 HTML、CSS 和 JavaScript，并实时查看运行效果。适合学习前端、试验网页样式以及制作小型交互原型，无需创建账户或配置开发服务器。\n\n编辑器支持语法高亮、自动补全、缩进、代码折叠、查找替换、撤销重做，以及本地代码格式化。你可以自动运行代码，也可以手动运行；控制台显示日志和运行错误，支持筛选、清空与调整高度。\n\n工作台支持左右或上下分栏、拖动调整比例、桌面与手机尺寸预览、自定义视口、全屏预览和日间/夜间模式。九个内置模板包括空白画布、个人简历、企业官网、管理后台、灵感花园、个人名片、联系表单、产品介绍页和待办清单。每个模板均可先预览再创建项目，并自带中英文切换。后台模板包含演示登录、菜单、概览、用户、订单及设置页面。\n\n项目和偏好保存在当前浏览器，可搜索项目并用 JSON 导入导出备份。编辑器、格式化器与模板随扩展安装，默认示例可离线使用。扩展没有广告、遥测或云端同步，也不读取其他标签页或浏览历史。你编写的预览代码若引用外部资源，仍可能访问对应服务。\n\n预览在独立沙箱中运行，不支持远程 JavaScript 库、npm、JSX/TypeScript 编译或多文件构建。后台登录仅为前端演示，不是真实认证系统。清除扩展数据或卸载前请导出项目备份。",
+      "searchTerms": ["网页预览", "HTML", "CSS", "JavaScript", "代码编辑器", "前端学习", "网页模板"],
+      "logo": "assets/logo-300.png",
+      "smallPromotionalTile": "assets/tile-zh-440x280.png",
+      "screenshots": ["assets/zh/01-workspace.png", "assets/zh/02-templates.png", "assets/zh/03-admin-demo.png", "assets/zh/04-dark-console.png"]
+    },
+    "en": {
+      "name": "Web Renderer",
+      "shortDescription": "Paste HTML, CSS and JavaScript to preview a page. Save projects locally and move them with JSON files.",
+      "description": "Web Renderer is a browser workspace for learning front-end development and trying small web prototypes. Click the toolbar icon to open a dedicated tab, edit HTML, CSS and JavaScript, and see the result immediately. No account or development server is required.\n\nThe editor includes syntax highlighting, completion, indentation, code folding, find and replace, undo/redo and locally bundled code formatting. Run previews automatically or manually. A resizable console displays logs and runtime errors, with filtering and clearing controls.\n\nArrange the editor and preview side by side or vertically. Drag to resize panels, try desktop and phone viewport sizes, enter custom dimensions, use fullscreen preview, and switch between light and dark themes. Nine templates provide a blank canvas, resume, company website, admin dashboard, idea garden, profile card, contact form, product landing page and to-do list. Preview templates before creating projects. Every template includes its own English/Chinese language switch. The admin demo includes a sample login, navigation, overview, users, orders and settings.\n\nProjects and preferences are stored locally in the current browser. Search projects and import/export JSON backups. The editor, formatter and templates are included in the installation; default examples work offline. There are no ads, analytics, telemetry or cloud accounts. The extension does not read other tabs or browsing history. External resources referenced by your own code may contact their respective services.\n\nPreview code runs in an isolated sandbox. Remote JavaScript libraries, npm packages, JSX/TypeScript compilation and multi-file builds are not supported. The admin login is a client-side demonstration, not a real authentication service. Export backups before clearing extension data or uninstalling.",
+      "searchTerms": ["HTML preview", "CSS playground", "JavaScript editor", "web templates", "front end", "code sandbox", "offline editor"],
+      "logo": "assets/logo-300.png",
+      "smallPromotionalTile": "assets/tile-en-440x280.png",
+      "screenshots": ["assets/en/01-workspace.png", "assets/en/02-templates.png", "assets/en/03-admin-demo.png", "assets/en/04-dark-console.png"]
+    }
+  }
+}

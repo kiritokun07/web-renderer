@@ -8,11 +8,16 @@
     "start": "node scripts/serve.mjs",
     "test": "playwright test",
     "check": "node --check app.js && node --check editor-source.js && node --check layout.js && node --check console-panel.js && node --check template-preview.js && node --check templates.js && node --check templates/i18n.js && node --check templates/resume.js && node --check templates/website.js && node --check templates/admin.js && node --check model.js && node --check sandbox.js && node --check background.js",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "assets:store": "node scripts/store-assets.mjs",
+    "package:edge": "npm run build && node scripts/package.mjs",
+    "verify:edge": "node scripts/verify-release.mjs",
+    "screenshots:store": "node scripts/verify-release.mjs --screenshots"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "esbuild": "^0.28.2"
+    "esbuild": "^0.28.2",
+    "fflate": "^0.8.3"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.20.3",

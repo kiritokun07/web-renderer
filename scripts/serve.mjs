@@ -5,12 +5,13 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const port = Number(process.env.PORT || 4173);
-const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8" };
+const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".png": "image/png" };
 // 显式发布运行文件，避免把测试、备份或隐藏文件暴露给网页。
 const files = new Set(["index.html", "styles.css", "theme.css", "app.js", "model.js", "example.js", "i18n.js", "sandbox.html", "sandbox.js", "templates.js", "builtin-code.js", "console-panel.js", "layout.js"]);
 for (const name of ["resume", "website", "admin", "i18n"]) files.add(`templates/${name}.js`);
 files.add("template-preview.js");
 files.add("legacy-template-code.js");
+for (const size of [16, 32, 48, 128]) files.add(`icons/icon-${size}.png`);
 createServer(async (request, response) => {
   try {
     const name = decodeURIComponent(new URL(request.url, "http://localhost").pathname).slice(1) || "index.html";

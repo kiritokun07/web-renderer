@@ -11,8 +11,7 @@ button:hover { filter: brightness(.97); }
 [hidden] { display: none !important; }
 .sidebar { width: 232px; flex-shrink: 0; padding: 30px 20px 20px; border-right: 1px solid var(--line); background: var(--sidebar); display: flex; flex-direction: column; min-height: 100vh; }
 .brand { display: flex; gap: 11px; align-items: center; text-decoration: none; color: var(--ink); font-size: 16px; font-weight: 650; letter-spacing: -.5px; }
-.brand-mark { width: 37px; height: 38px; flex-shrink: 0; display: grid; place-content: center; background: var(--green); border-radius: 10px; color: var(--on-green); font: italic 31px Georgia, serif; position: relative; padding-bottom: 6px; }
-.brand-mark span { position: absolute; font-size: 16px; right: 5px; top: 4px; }
+.brand-mark { width: 38px; height: 38px; flex-shrink: 0; display: block; }
 .brand small { display: block; color: var(--muted); font-size: 10px; font-weight: 400; letter-spacing: 2px; margin-top: 6px; }
 .sidebar-heading { margin: 49px 10px 14px; color: var(--muted); display: flex; justify-content: space-between; font-size: 11px; }
 .count { color: var(--muted); font-size: 10px; }
