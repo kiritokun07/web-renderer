@@ -6,6 +6,8 @@ Edit HTML, CSS and JavaScript in your browser, preview changes instantly, and bu
 
 [**Install from Microsoft Edge Add-ons →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa) · [Download the extension](https://github.com/kiritokun07/web-renderer/releases/latest)
 
+![Workspace with the code editor and live preview](store/assets/en/01-workspace.png)
+
 ## Features
 
 - **Code editor:** Syntax highlighting, completion, formatting, find and replace, undo and redo.
@@ -14,6 +16,20 @@ Edit HTML, CSS and JavaScript in your browser, preview changes instantly, and bu
 - **Template library:** Nine templates, including a blank canvas, resume, company website and admin dashboard. Preview before creating a project; every template supports English and Chinese.
 - **Project management:** Create, rename, search and automatically save projects, with JSON import and export.
 - **Interface settings:** English and Chinese, light and dark themes, and a GitHub repository link with a star count.
+
+## Screenshots
+
+### Template library
+
+Preview a template, then create a project from it.
+
+![Template library with nine templates](store/assets/en/02-templates.png)
+
+### Dark mode and console
+
+Edit code in dark mode and inspect logs below the preview.
+
+![Dark workspace with the debug console open](store/assets/en/04-dark-console.png)
 
 ## Installation
 

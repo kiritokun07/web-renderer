@@ -6,6 +6,8 @@
 
 [**从 Microsoft Edge 商店安装 →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa) · [下载安装包](https://github.com/kiritokun07/web-renderer/releases/latest)
 
+![工作台：左侧编辑代码，右侧实时预览网页](store/assets/zh/01-workspace.png)
+
 ## 功能介绍
 
 - **代码编辑**：语法高亮、自动补全、格式化、查找替换和撤销重做。
@@ -14,6 +16,20 @@
 - **模板库**：内置空白画布、个人简历、企业官网、管理后台等九个模板，支持先预览再使用，所有模板均可切换中英文。
 - **项目管理**：新建、重命名、搜索和自动保存，支持 JSON 导入导出。
 - **界面设置**：中英文切换、日间 / 夜间模式，提供 GitHub 仓库入口及 Star 数显示。
+
+## 界面预览
+
+### 模板库
+
+先预览模板效果，再选择模板创建项目。
+
+![包含九个模板的模板库](store/assets/zh/02-templates.png)
+
+### 夜间模式与控制台
+
+在夜间模式下编辑代码，并在预览下方查看运行日志。
+
+![夜间模式工作台与调试控制台](store/assets/zh/04-dark-console.png)
 
 ## 安装
 
