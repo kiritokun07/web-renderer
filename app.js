@@ -8,6 +8,7 @@ import { templates } from "./templates.js";
 import { builtinCode } from "./builtin-code.js";
 import { createTemplatePreview } from "./template-preview.js";
 import { legacyTemplateCode } from "./legacy-template-code.js";
+import { createGithubBadge } from "./github-badge.js";
 
 const $ = selector => document.querySelector(selector);
 const preview = $("#preview");
@@ -50,6 +51,7 @@ const editor = createCodeEditor($("#code-editor"), handleCodeChange);
 const debugConsole = createConsolePanel(t, () => state.preferences, save);
 const previewLayout = createPreviewLayout(() => state.preferences, save, t);
 const templatePreview = createTemplatePreview(t);
+const githubBadge = createGithubBadge($("#github-link"), t);
 
 function toast(message) {
   clearTimeout(toastTimer);
@@ -184,6 +186,7 @@ function showProject() {
 }
 
 function translate() {
+  githubBadge.refresh();
   document.documentElement.lang = state.language === "zh" ? "zh-CN" : "en";
   document.querySelectorAll("[data-i18n]").forEach(element => { element.textContent = t(element.dataset.i18n); });
   document.querySelectorAll("[data-i18n-placeholder]").forEach(element => { element.placeholder = t(element.dataset.i18nPlaceholder); element.setAttribute("aria-label", element.placeholder); });

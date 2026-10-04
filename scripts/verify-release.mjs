@@ -57,6 +57,8 @@ try {
       await expect(page.locator("#preview-status")).toHaveText(ready);
       await expect(rendered.locator("#grow")).toBeVisible();
       expect(await page.locator(".brand-mark").evaluate(image => image.complete && image.naturalWidth === 48)).toBe(true);
+      await expect(page.locator(".github-stars")).toHaveText(/^[\d,]+$/, { timeout: 10000 });
+      report.githubStars = await page.locator(".github-stars").textContent();
       await capture("01-workspace");
       await page.screenshot(); // Wait for nested frame hit-testing before first click.
       await rendered.locator("#grow").click();

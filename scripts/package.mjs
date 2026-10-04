@@ -13,7 +13,7 @@ const files = [
   "manifest.json", "background.js", "index.html", "styles.css", "theme.css",
   "app.js", "model.js", "example.js", "i18n.js", "sandbox.html", "sandbox.js",
   "templates.js", "template-preview.js", "builtin-code.js", "legacy-template-code.js",
-  "console-panel.js", "layout.js", "vendor/THIRD-PARTY-LICENSES.txt",
+  "console-panel.js", "layout.js", "github-badge.js", "vendor/THIRD-PARTY-LICENSES.txt",
   ...["resume", "website", "admin", "i18n"].map(name => `templates/${name}.js`),
   ...["en", "zh_CN"].map(language => `_locales/${language}/messages.json`),
   ...Object.values(manifest.icons),

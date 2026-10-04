@@ -1,5 +1,9 @@
 # Web Renderer · 网页渲染工具
 
+[**从 Microsoft Edge 商店安装 / Install from Edge Add-ons →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa)
+
+已正式上架 Edge，点击链接即可安装，无需打开开发者模式。
+
 一个用于学习、试验和制作网页原型的浏览器扩展：粘贴 HTML / CSS / JavaScript，在右侧运行网页，把不同实验保存为项目。
 
 原生 HTML、CSS、JavaScript 工作台，使用本地打包的 CodeMirror 编辑器和 Prettier 格式化器。Chrome / Edge 扩展和本地网页版使用同一套页面。已包含 `vendor/` 构建产物，可直接加载使用，不依赖 CDN。
@@ -13,7 +17,7 @@ cd web-renderer
 
 也可以在仓库页面选择 **Code → Download ZIP**，解压后使用项目文件夹。
 
-## 先安装到浏览器（不需要 npm）
+## 开发者本地安装（不需要 npm）
 
 1. Chrome 地址栏输入 `chrome://extensions`；Edge 输入 `edge://extensions`。
 2. 打开右上角的「开发者模式」。
@@ -39,6 +43,7 @@ npm start
 
 ## 可以做什么
 
+- 左上角 GitHub 入口可打开项目仓库并查看 Star 数；公开计数缓存 6 小时，离线时显示缓存或 Star 入口，不影响编辑。
 - 编辑 HTML、CSS、JavaScript；HTML 支持片段和带内联样式、脚本的完整文档。
 - CodeMirror 编辑器提供语法高亮、补全、括号配对、自动缩进、代码折叠、查找替换和撤销/重做。项目与 HTML/CSS/JS 标签分别保留本次会话的编辑记录；「格式化」使用本地 Prettier。
 - 自动运行（停顿 550 毫秒），或关闭自动运行后点按钮 / 按 `⌘ Enter`、`Ctrl Enter`。
@@ -109,7 +114,7 @@ npm start
 
 ## 原型边界
 
-当前已发布到 [GitHub](https://github.com/kiritokun07/web-renderer)，并准备了 Edge Add-ons 商店候选包；尚未提交商店审核或正式上架。
+已上架 [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa)，源码发布于 [GitHub](https://github.com/kiritokun07/web-renderer)。
 
 - 用户的预览项目不支持 npm 安装、JSX/TypeScript 编译、多文件路径或远程 JavaScript/CDN 库。
 - 沙箱中的用户代码不能访问 `localStorage`、扩展 API、顶层页面，不能弹窗、下载或提交表单；普通按钮和 DOM 交互可运行。手机模式只模拟视口尺寸，不模拟触摸、设备像素比或真实手机设备。
@@ -129,7 +134,7 @@ npm run package:edge
 npm run verify:edge
 ```
 
-上传 `dist/web-renderer-edge-0.2.0.zip`，不要上传 GitHub 源码 ZIP。验证脚本使用本机 Microsoft Edge 和独立临时浏览器配置，直接检查 ZIP 中的运行文件；`npm run screenshots:store` 重新生成两种语言的商店截图。
+上传 `dist/web-renderer-edge-0.2.1.zip`，不要上传 GitHub 源码 ZIP。验证脚本使用本机 Microsoft Edge 和独立临时浏览器配置，直接检查 ZIP 中的运行文件；`npm run screenshots:store` 重新生成两种语言的商店截图。
 
 隐私政策链接：[PRIVACY.md](https://github.com/kiritokun07/web-renderer/blob/main/PRIVACY.md)。维护者不接收项目、日志或偏好数据；你运行的代码引用外部资源时可能联网，详情见隐私说明。
 
@@ -162,8 +167,8 @@ npm test
 
 ## English
 
-A local-first HTML/CSS/JavaScript playground and Manifest V3 browser extension with bundled CodeMirror and Prettier. Load this folder as an unpacked extension in Chrome or Edge, then click its toolbar icon. Or run `npm start` and open <http://127.0.0.1:4173>. The included `vendor/` assets work offline without installing dependencies; run `npm ci && npm run build` when changing the editor source.
+A local-first HTML/CSS/JavaScript playground and Manifest V3 browser extension with bundled CodeMirror and Prettier. [Install from Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa), then click its toolbar icon. For development, load this folder as an unpacked extension in Chrome or Edge. Or run `npm start` and open <http://127.0.0.1:4173>. The included `vendor/` assets work offline without installing dependencies; run `npm ci && npm run build` when changing the editor source.
 
 Includes syntax highlighting, completion, formatting, per-file undo history, find/replace, a filtered console, project search, nine templates, resizable layouts, custom viewport sizes and light/dark themes. New templates include a resume, a company website and an admin dashboard. The dashboard prefills `admin / admin123` for a local demo login, with overview, users, orders, settings and sign-out. Workspace preferences persist; project content remains compatible with v0.1 backups.
 
-Projects are stored locally in each browser/origin. Export JSON backups to move them; importing appends copies. Switch the UI language with the top-right button. Preview code runs in an isolated sandbox without extension APIs or workspace storage. Remote JavaScript libraries, npm/JSX/TypeScript compilation and hosting are not supported. An Edge Add-ons submission package, store assets and a bilingual [privacy policy](PRIVACY.md) are included; the extension has not yet been submitted or published in the store. See the [release guide](store/README.md).
+Projects are stored locally in each browser/origin. Export JSON backups to move them; importing appends copies. Switch the UI language with the top-right button. Preview code runs in an isolated sandbox without extension APIs or workspace storage. Remote JavaScript libraries, npm/JSX/TypeScript compilation and hosting are not supported. An Edge Add-ons submission package, store assets and a bilingual [privacy policy](PRIVACY.md) are included; the extension is available on [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa). See the [release guide](store/README.md).

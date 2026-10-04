@@ -194,3 +194,13 @@ dialog { background: var(--panel); }
   .top-actions button { font-size: 9px; }
 }
 @media (max-width: 400px) { .template-grid { grid-template-columns: 1fr; } .preview-panel .panel-toolbar { padding: 9px; } .device-button { padding: 4px 6px; } }
+
+/* Compact repository + star count, using workspace colors in both themes. */
+.github-badge { display: inline-flex; align-self: flex-start; align-items: stretch; max-width: 100%; margin-top: 18px; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); background: var(--panel); text-decoration: none; font-size: 11px; font-weight: 600; line-height: 28px; }
+.github-badge:hover { color: var(--green); border-color: var(--green); background: var(--surface); }
+.github-repo { display: inline-flex; align-items: center; gap: 6px; padding: 0 8px; min-width: 0; }
+.github-repo svg { flex-shrink: 0; }
+.github-repo span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.github-stars { border-left: 1px solid var(--line); padding: 0 8px; min-width: 32px; text-align: center; font-variant-numeric: tabular-nums; }
+.github-badge + .sidebar-heading { margin-top: 24px; }
+@media (max-width: 800px) { .github-badge { grid-column: 1 / -1; grid-row: 3; justify-self: start; margin-top: 0; } }

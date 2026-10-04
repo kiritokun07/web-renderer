@@ -11,6 +11,7 @@ const files = new Set(["index.html", "styles.css", "theme.css", "app.js", "model
 for (const name of ["resume", "website", "admin", "i18n"]) files.add(`templates/${name}.js`);
 files.add("template-preview.js");
 files.add("legacy-template-code.js");
+files.add("github-badge.js");
 for (const size of [16, 32, 48, 128]) files.add(`icons/icon-${size}.png`);
 createServer(async (request, response) => {
   try {
