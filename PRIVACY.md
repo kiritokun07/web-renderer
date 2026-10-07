@@ -18,7 +18,7 @@ Web Renderer 由 GitHub 用户 [kiritokun07](https://github.com/kiritokun07) 维
 
 如果你在自己的代码中引用外部图片、样式、字体、链接或发起网络请求，浏览器仍可能连接这些第三方服务，并向其发送 IP 地址以及请求中包含的数据。网络是否成功取决于浏览器的安全策略和跨域限制。这些请求由你运行的代码决定，不会经过维护者的服务器；第三方如何处理数据适用其自身隐私政策。
 
-GitHub 入口会向 `api.github.com` 请求此公开仓库的 Star 数，并将计数及获取时间缓存 6 小时。请求不包含项目、代码或日志，不发送登录凭据或 Cookie；GitHub 仍会收到连接所需的 IP 地址等网络信息。网络不可用时使用缓存或显示 Star 入口，编辑功能不受影响。点击仓库链接会在新标签页打开 GitHub，其数据处理适用 [GitHub 隐私政策](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)。
+GitHub 入口会向 `api.github.com` 请求此公开仓库的 Star 数，并在本地保存计数及获取时间。打开工作台时会更新计数；返回页面时也会更新，每分钟最多请求一次。请求不包含项目、代码或日志，不发送登录凭据或 Cookie；GitHub 仍会收到连接所需的 IP 地址等网络信息。网络不可用时使用缓存或显示 Star 入口，编辑功能不受影响。点击仓库链接会在新标签页打开 GitHub，其数据处理适用 [GitHub 隐私政策](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)。
 
 ### 导入、导出和删除
 
@@ -44,7 +44,7 @@ The editor, formatter and built-in templates are bundled locally. Default exampl
 
 If your code references external images, styles, fonts or links, or initiates network requests, your browser may contact third parties and send your IP address and data included in those requests. Browser security and cross-origin restrictions determine which requests succeed. Such requests originate from the code you run and do not pass through the maintainer's servers. Third parties' own privacy policies apply to their handling of that data.
 
-The GitHub link requests this public repository's star count from `api.github.com` and caches the count and retrieval time for six hours. Requests contain no projects, code or logs and send no login credentials or cookies. GitHub receives network information such as your IP address needed for the connection. Offline, the badge shows cached data or a Star link without affecting editing. Clicking the link opens GitHub in a new tab, subject to [GitHub's privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+The GitHub link requests this public repository's star count from `api.github.com` and stores the count and retrieval time locally. The count refreshes when the workspace opens or regains focus, with at most one request per minute in each workspace tab. Requests contain no projects, code or logs and send no login credentials or cookies. GitHub receives network information such as your IP address needed for the connection. Offline, the badge shows cached data or a Star link without affecting editing. Clicking the link opens GitHub in a new tab, subject to [GitHub's privacy policy](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 
 ### Import, export and deletion
 
