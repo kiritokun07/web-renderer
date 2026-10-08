@@ -4,7 +4,7 @@
 
 Edit HTML, CSS and JavaScript in your browser, preview changes instantly, and build web prototypes. Available as a Chrome / Edge extension or a local web app, with projects saved in your browser.
 
-[**Install from Microsoft Edge Add-ons →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa) · [Download the extension](https://github.com/kiritokun07/web-renderer/releases/latest)
+[**Install from Chrome Web Store →**](https://chromewebstore.google.com/detail/web-renderer-%C2%B7-%E7%BD%91%E9%A1%B5%E6%B8%B2%E6%9F%93%E5%B7%A5%E5%85%B7/fpncpflbmojlefkajgpoijajhhfidkea) · [**Install from Microsoft Edge Add-ons →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa) · [Download the extension](https://github.com/kiritokun07/web-renderer/releases/latest)
 
 ![Workspace with the code editor and live preview](store/assets/en/01-workspace.png)
 
@@ -32,6 +32,10 @@ Edit code in dark mode and inspect logs below the preview.
 ![Dark workspace with the debug console open](store/assets/en/04-dark-console.png)
 
 ## Installation
+
+### Install from the Chrome Web Store
+
+Open [Chrome Web Store](https://chromewebstore.google.com/detail/web-renderer-%C2%B7-%E7%BD%91%E9%A1%B5%E6%B8%B2%E6%9F%93%E5%B7%A5%E5%85%B7/fpncpflbmojlefkajgpoijajhhfidkea) in Chrome, click **Add to Chrome**, and complete installation. Find and pin **Web Renderer** in your browser toolbar, then click its icon to open the workspace.
 
 ### Install from the Edge store
 

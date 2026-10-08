@@ -4,7 +4,7 @@
 
 在浏览器中编辑 HTML、CSS 和 JavaScript，实时预览网页效果，快速制作页面原型。支持 Chrome / Edge 扩展和本地网页版，项目保存在当前浏览器中。
 
-[**从 Microsoft Edge 商店安装 →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa) · [下载安装包](https://github.com/kiritokun07/web-renderer/releases/latest)
+[**从 Chrome 应用商店安装 →**](https://chromewebstore.google.com/detail/web-renderer-%C2%B7-%E7%BD%91%E9%A1%B5%E6%B8%B2%E6%9F%93%E5%B7%A5%E5%85%B7/fpncpflbmojlefkajgpoijajhhfidkea) · [**从 Microsoft Edge 商店安装 →**](https://microsoftedge.microsoft.com/addons/detail/jmlcddodoomgbdkflcclldioiphngaaa) · [下载安装包](https://github.com/kiritokun07/web-renderer/releases/latest)
 
 ![工作台：左侧编辑代码，右侧实时预览网页](store/assets/zh/01-workspace.png)
 
@@ -32,6 +32,10 @@
 ![夜间模式工作台与调试控制台](store/assets/zh/04-dark-console.png)
 
 ## 安装
+
+### 从 Chrome 应用商店安装
+
+在 Chrome 中打开 [Chrome 应用商店](https://chromewebstore.google.com/detail/web-renderer-%C2%B7-%E7%BD%91%E9%A1%B5%E6%B8%B2%E6%9F%93%E5%B7%A5%E5%85%B7/fpncpflbmojlefkajgpoijajhhfidkea)，点击「添加至 Chrome」并完成安装。在浏览器工具栏中找到并固定 **Web Renderer**，点击图标即可打开工作台。
 
 ### 从 Edge 商店安装
 
